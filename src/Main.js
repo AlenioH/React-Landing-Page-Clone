@@ -32,8 +32,103 @@ const ipadStyle = css`
   width: 775px;
   height: 500px;
   left: 22%;
-  height: 545px;
+  text-align: center;
 `;
+
+const bannerContainer = css`
+  text-align: center;
+  width: 78%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+`;
+
+const bannerStyleReduced = css`
+  width: 90%;
+  margin: 0 auto 10px;
+  text-align: center;
+`;
+const bannerStyle = css`
+  background-color: #fffdd7;
+  border-radius: 10px;
+  padding: 20px;
+
+  > * {
+    display: inline-block;
+    font-size: 18px;
+    color: #664d1d;
+    line-height: 1.5%;
+  }
+
+  a {
+    text-decoration: none;
+    color: #337ab7;
+    &:hover {
+      color: #23527c;
+    }
+  }
+`;
+
+const sectionGen = css`
+  > * {
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1035px;
+  }
+`; // THE SHIT IS NOT CENTRAL SEND HELP
+
+const containerSection = css`
+  text-align: center;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const styleRow = css`
+  display: flex;
+  flex-direction: row;
+  margin-left: -15px;
+  margin-right: -15px;
+  align-items: center;
+`;
+
+const styleText = css`
+  width: 50%;
+
+  padding-left: 15px;
+  padding-right: 15px;
+  > * {
+    line-height: 1.5;
+    font-size: 18px;
+  }
+`;
+
+const styleImage = css`
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 50%;
+  > * {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+`;
+
+const h3Style = css`
+  font-size: 46px;
+  line-height: 1.2;
+  margin-top: 20px;
+  margin-bottom: 7px;
+  font-weight: 600;
+`;
+
 function Main() {
   return (
     <div
@@ -76,148 +171,248 @@ function Main() {
                 z-index: 50;
                 position: absolute;
                 top: 0;
-                left: -70px;
+                left: -10px;
               `}
             ></img>
           </div>
 
           <section>
-            <img src={bannerWunderlist}></img>
-            <p>
-              For Wunderlist users: Use our 1-click import for a smooth move to
-              Zenkit To Do!
-            </p>
-            <a href="#">Compare now.</a>
-          </section>
-          <section>
-            <div>
-              <h3>Welcome home</h3>
-              <p>
-                <span
-                  css={css`
-                    font-weight: bold;
-                    color: hotpink;
-                  `}
-                >
-                  Feel at home{' '}
-                </span>
-                in Zenkit To Do. Organize your tasks, shopping lists, meetings,
-                events, trips, ideas, notes, places, and whatever else needs to
-                be organized, so you have more time for the important things in
-                life.
-              </p>
-              <img src={ToDo1} alt="alien img"></img>
+            <div css={bannerContainer}>
+              <div css={bannerStyleReduced}>
+                <div css={bannerStyle}>
+                  <img
+                    src={bannerWunderlist}
+                    css={css`
+                      width: 90px;
+                      margin-right: 15px;
+                      margin-top: -3px;
+                      vertical-align: middle;
+                    `}
+                  ></img>
+                  <p>
+                    For Wunderlist users: Use our 1-click import for a smooth
+                    move to Zenkit To Do! <a href="#">Compare now.</a>
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
-          <section>
-            <div>
-              <img src={ToDo2}></img>
-              <h3>Your day at a glance</h3>
-              <p>
-                <span
-                  css={css`
-                    font-weight: bold;
-                    color: purple;
-                  `}
-                >
-                  Focus
-                </span>
-                on your most important tasks for the day. Our smart lists like
-                “Assigned to me”, “Favorites”, “Week” and “Today” give you the
-                perfect overview of everything you have up ahead.
-              </p>
+
+          <section css={sectionGen}>
+            <div css={containerSection}>
+              <div css={styleRow}>
+                <div css={styleText}>
+                  <h3 css={h3Style}>Welcome home</h3>
+                  <p>
+                    <span
+                      css={css`
+                        font-weight: 700;
+                        color: #f54da5;
+                      `}
+                    >
+                      Feel at home{' '}
+                    </span>
+                    in Zenkit To Do. Organize your tasks, shopping lists,
+                    meetings, events, trips, ideas, notes, places, and whatever
+                    else needs to be organized, so you have more time for the
+                    important things in life.
+                  </p>
+                </div>
+                <div css={styleImage}>
+                  <img src={ToDo1} alt="alien img"></img>
+                </div>
+              </div>
             </div>
           </section>
-          <section>
-            <div>
-              <h3>Never miss a deadline</h3>
-              <p>
-                Add{' '}
-                <span
-                  css={css`
-                    font-weight: bold;
-                    color: blue;
-                  `}
-                >
-                  due dates and reminders
-                </span>{' '}
-                to any task. Repeating tasks give you control over continuing
-                processes. You can even integrate your favorite calendar tools
-                (coming soon).
-              </p>
-              <img src={ToDo3}></img>
+
+          <section css={sectionGen}>
+            <div css={containerSection}>
+              <div css={styleRow}>
+                <div css={styleImage}>
+                  <img src={ToDo2}></img>
+                </div>
+                <div css={styleText}>
+                  <h3 css={h3Style}>Your day at a glance</h3>
+                  <p>
+                    <span
+                      css={css`
+                        font-weight: 700;
+                        color: #9d54fd;
+                      `}
+                    >
+                      Focus{' '}
+                    </span>
+                    on your most important tasks for the day. Our smart lists
+                    like “Assigned to me”, “Favorites”, “Week” and “Today” give
+                    you the perfect overview of everything you have up ahead.
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
-          <section>
-            <div>
-              <img src={ToDo4}></img>
-              <h3>Collaborate with anyone</h3>
-              <p>
-                <span
-                  css={css`
-                    font-weight: bold;
-                    color: orange;
-                  `}
-                >
-                  Share and assign tasks{' '}
-                </span>
-                with colleagues, friends, and family. Plan for work, home, and
-                everything in between with the people that matter. Comment and
-                reply to tasks to keep everyone up-to-date.
-              </p>
+
+          <section css={sectionGen}>
+            <div css={containerSection}>
+              <div css={styleRow}>
+                <div css={styleText}>
+                  <h3 css={h3Style}>Never miss a deadline</h3>
+                  <p>
+                    Add{' '}
+                    <span
+                      css={css`
+                        font-weight: 700;
+                        color: #19bede;
+                      `}
+                    >
+                      due dates and reminders
+                    </span>{' '}
+                    to any task. Repeating tasks give you control over
+                    continuing processes. You can even integrate your favorite
+                    calendar tools (coming soon).
+                  </p>
+                </div>
+                <div css={styleImage}>
+                  <img src={ToDo3}></img>
+                </div>
+              </div>
             </div>
           </section>
-          <section>
-            <div>
-              <h3>Connect to the Zenkit Universe</h3>
-              <p>
-                Zenkit To Do is part of the{' '}
-                <span
-                  css={css`
-                    font-weight: bold;
-                    color: hotpink;
-                  `}
-                >
-                  Zenkit family
-                </span>
-                . All products deeply integrate with one another. In fact, they
-                share one single data platform. Tasks from To Do are also
-                available in Zenkit Project Management (To Do’s big brother)
-                with more views and functions like Kanban, Gantt, and mind maps.
-              </p>
-              <img src={ToDo5}></img>
+
+          <section css={sectionGen}>
+            <div css={containerSection}>
+              <div css={styleRow}>
+                <div css={styleImage}>
+                  <img src={ToDo4}></img>
+                </div>
+                <div css={styleText}>
+                  <h3 css={h3Style}>Collaborate with anyone</h3>
+                  <p>
+                    <span
+                      css={css`
+                        font-weight: 700;
+                        color: #f9903f;
+                      `}
+                    >
+                      Share and assign tasks{' '}
+                    </span>
+                    with colleagues, friends, and family. Plan for work, home,
+                    and everything in between with the people that matter.
+                    Comment and reply to tasks to keep everyone up-to-date.
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
-          <section>
-            <div>
-              <img src={ToDo6}></img>
-              <h3>Enterprise ready</h3>
-              <p>
-                The Zenkit platform is an{' '}
-                <span
-                  css={css`
-                    font-weight: bold;
-                    color: purple;
-                  `}
-                >
-                  Enterprise-ready infrastructure
-                </span>{' '}
-                including Access-management (Roles, Groups), Provisioning
-                (SCIM), Identity management (SAML, 2FA), Audits and more…
-              </p>
+
+          <section css={sectionGen}>
+            <div css={containerSection}>
+              <div css={styleRow}>
+                <div css={styleText}>
+                  <h3 css={h3Style}>Connect to the Zenkit Universe</h3>
+                  <p>
+                    Zenkit To Do is part of the{' '}
+                    <span
+                      css={css`
+                        font-weight: 700;
+                        color: #f54da5;
+                      `}
+                    >
+                      Zenkit family
+                    </span>
+                    . All products deeply integrate with one another. In fact,
+                    they share one single data platform. Tasks from To Do are
+                    also available in Zenkit Project Management (To Do’s big
+                    brother) with more views and functions like Kanban, Gantt,
+                    and mind maps.
+                  </p>
+                </div>
+                <div css={styleImage}>
+                  <img src={ToDo5}></img>
+                </div>
+              </div>
             </div>
           </section>
+
+          <section css={sectionGen}>
+            <div css={containerSection}>
+              <div css={styleRow}>
+                <div css={styleImage}>
+                  <img src={ToDo6}></img>
+                </div>
+                <div css={styleText}>
+                  <h3 css={h3Style}>Enterprise ready</h3>
+                  <p>
+                    The Zenkit platform is an{' '}
+                    <span
+                      css={css`
+                        font-weight: 700;
+                        color: #9d54fd;
+                      `}
+                    >
+                      Enterprise-ready infrastructure
+                    </span>{' '}
+                    including Access-management (Roles, Groups), Provisioning
+                    (SCIM), Identity management (SAML, 2FA), Audits and more…
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section
             css={css`
               background-image: url(${bg1});
+              background-size: 100%;
+              margin-bottom: 4rem;
+              width: 100%;
+              overflow: hidden;
             `}
           >
-            <h2>Stay in sync</h2>
-            <p>
-              Zenkit To Do syncs seamlessly across devices to give you
-              productivity on the go (even offline). Download it for free from
-              the App Store and Google Play today!
-            </p>
+            <div
+              css={css`
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: top;
+                background-position-x: center;
+                background-position-y: top;
+                vertical-align: middle;
+                display: table-cell;
+                width: 100%;
+                padding: 11% 0;
+              `}
+            >
+              <div
+                css={css`
+                  width: 100%;
+                  padding-right: 30px;
+                  padding-left: 30px;
+                  text-align: center;
+                `}
+              >
+                <h2
+                  css={css`
+                    font-size: 46px;
+                    font-weight: 600;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                  `}
+                >
+                  Stay in sync
+                </h2>
+                <p
+                  css={css`
+                    font-size: 18px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    line-height: 1.6;
+                  `}
+                >
+                  Zenkit To Do syncs seamlessly across devices to give you
+                  productivity on the go (even offline). Download it for free
+                  from the App <br /> Store and Google Play today!
+                </p>
+              </div>
+            </div>
           </section>
           <section>
             <div>
