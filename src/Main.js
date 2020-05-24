@@ -12,6 +12,7 @@ import bg1 from './sync-bg-1.jpg';
 import Animation from './Trust_Animation.gif';
 import ipadPic from './zenkit-to-do-en-1.png';
 import bannerWunderlist from './banner_wunderlist_zenkit-1.png';
+import bg2 from './sync-mask-1.png';
 
 const styleWelcome = css`
   margin-top: 80px;
@@ -142,7 +143,7 @@ function Main() {
           <section css={styleWelcome}>
             <h1
               css={css`
-                font-size: 6rem;
+                font-size: 5rem;
                 margin-bottom: 0.5rem;
                 line-height: 1.2;
                 margin-top: 0;
@@ -361,8 +362,8 @@ function Main() {
 
           <section
             css={css`
-              background-image: url(${bg1});
-              background-size: 100%;
+              background-image: url(${bg2}), url(${bg1});
+              background-size: 100% 100%;
               margin-bottom: 4rem;
               width: 100%;
               overflow: hidden;
@@ -370,14 +371,10 @@ function Main() {
           >
             <div
               css={css`
-                background-size: 100%;
-                background-repeat: no-repeat;
-                background-position: top;
-                background-position-x: center;
-                background-position-y: top;
                 vertical-align: middle;
                 display: table-cell;
                 width: 100%;
+                text-align: center;
                 padding: 11% 0;
               `}
             >
@@ -414,10 +411,40 @@ function Main() {
               </div>
             </div>
           </section>
-          <section>
-            <div>
-              <h2>Here for you. Here to stay.</h2>
-              <p>
+          <section
+            css={css`
+              margin-top: 100px;
+            `}
+          >
+            <div
+              css={css`
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 80%;
+                margin: auto;
+              `}
+            >
+              <h2
+                css={css`
+                  font-size: 46px;
+                  font-family: inherit;
+                  font-weight: 500;
+                  margin-bottom: 0;
+                `}
+              >
+                Here for you. Here to stay.
+              </h2>
+              <p
+                css={css`
+                  text-align: center;
+                  font-size: 18px;
+                  font-family: inherit;
+                  letter-spacing: 0.6px;
+                  line-height: 1.6;
+                `}
+              >
                 Built from the ground up with your security in mind by a German
                 team with guaranteed GDPR compliance and Europe-based servers.
                 We are committed to remaining independent – no acquisitions, no
@@ -427,9 +454,23 @@ function Main() {
             </div>
           </section>
           <section>
-            <div>
+            <div
+              css={css`
+                margin-top: 50px;
+                margin-bottom: 50px;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+              `}
+            >
               <p>
-                <img src={Animation}></img>
+                <img
+                  src={Animation}
+                  css={css`
+                    width: 1140px;
+                    height: 332px;
+                  `}
+                ></img>
               </p>
             </div>
           </section>
