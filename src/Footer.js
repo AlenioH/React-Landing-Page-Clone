@@ -1,6 +1,6 @@
 import React from 'react';
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
+import { jsx, css } from '@emotion/core';
 import logo from './to-do-icon.png';
 import applelogo from './apple_app_store_badge.svg';
 import googlelogo from './google-play-badge.png';
@@ -251,26 +251,6 @@ function Footer() {
             </a>
           </div>
         </div>
-      </div>
-      <div className="footerBottom">
-        <div className="footerSocial">
-          <ul>
-            {/* <li><a href="#"><img></img></a></li>
-  <li><a href="#"><img></img></a></li>
-  <li><a href="#"><img></img></a></li>
-  <li><a href="#"><img></img></a></li> need to figure out the social media logos of its okay to download them from some other page*/}
-          </ul>
-        </div>
-        <button>
-          <img src={globe}></img> <span>English</span>
-        </button>
-      </div>
-      <div className="footerLegal">
-        © 2020 Zenkit. A venture of Axonic Informationssysteme GmbH.
-        <br />
-        All rights reserved. Read our
-        <a href="#"> Legal Notice</a>,<a href="#">Privacy Policy</a> and{' '}
-        <a href="#">Terms of Service</a>
       </div>
     </footer>
   );
